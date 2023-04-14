@@ -9,6 +9,8 @@
 - [引用](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%95%E7%94%A8)
 - [コード](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%82%B3%E3%83%BC%E3%83%89)
 - [チェックボックス](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9)
+- [強調](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%B7%E8%AA%BF)
+- [水平線](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%B0%B4%E5%B9%B3%E7%B7%9A)
 - [リンク](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF)
 - [画像](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%94%BB%E5%83%8F)
 
@@ -98,12 +100,12 @@ $```
 ```
 通常 *強調*  
 通常 _強調_  
-通常 **太字**   
+通常 **太字**  
 通常 __太字__  
 通常 ***複合***  
 通常 ___複合___
 
-## 水平線()
+## 水平線
 ```
 # *,-,_を3つ以上連続(間にスペースがあっても良い)
 * * *
