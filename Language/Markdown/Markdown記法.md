@@ -16,9 +16,10 @@
   - [画像](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%94%BB%E5%83%8F)
 - [GFM限定]()
 
-[Top]: 
+[Top]: https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%96%87%E6%B3%95%E3%83%81%E3%83%BC%E3%83%88%E3%82%B7%E3%83%BC%E3%83%88
+
 # 共通記法
-## 見出し(#)
+## 見出し(#) 
 
 ```
 # 見出し1
@@ -30,6 +31,9 @@
 ## 見出し2
 ### 見出し3
 
+<br>
+
+[TOPに戻る][Top]  
 ## 箇条書き(-)
 ```
 - A
@@ -42,7 +46,9 @@
   - b
 - B
 
+<br>
 
+[TOPに戻る][Top]
 ## 番号付きリスト(1.)
 ```
 1. A
@@ -54,7 +60,10 @@
    1. a
    2. b
 2. B  
-   
+
+<br>
+
+[TOPに戻る][Top]  
 ## 引用(>)
 
 ```
@@ -68,6 +77,9 @@
 >> 二重引用も  
 >> 可能
 
+<br>
+
+[TOPに戻る][Top]  
 ## コード(```)
 ```
 $```
@@ -78,6 +90,9 @@ $```
 コード
 ```
 
+<br>
+
+[TOPに戻る][Top]  
 ## チェックボックス([])
 
 ```
@@ -87,6 +102,9 @@ $```
 - [x] チェック1
 - [ ] チェック2
 
+<br>
+
+[TOPに戻る][Top]  
 ## 強調
 ```
 #斜体(*,_)
@@ -108,6 +126,9 @@ $```
 通常 ***複合***  
 通常 ___複合___
 
+<br>
+
+[TOPに戻る][Top]  
 ## 水平線
 ```
 # *,-,_を3つ以上連続(間にスペースがあっても良い)
@@ -122,6 +143,9 @@ _ _ _
 3行目
 _ _ _
 
+<br>
+
+[TOPに戻る][Top]  
 ## リンク
 ```
 [タイトル](URL)
@@ -136,6 +160,9 @@ _ _ _
 
 [url]: https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF
 
+<br>
+
+[TOPに戻る][Top]  
 ## 画像
 ```
 ![画像タイトル](URL)
@@ -143,6 +170,10 @@ or
 ![画像タイトル](パス)
 ```
 ![Lenna](image/Lenna.png)
+
+<br>
+
+[TOPに戻る][Top]  
 
 # Github Flavored Markdown(GFM)限定
 GitHubの独自仕様を加えたMarkdown記法
