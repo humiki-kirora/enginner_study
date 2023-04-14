@@ -10,7 +10,7 @@
 - [コード](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%82%B3%E3%83%BC%E3%83%89)
 - [チェックボックス](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9)
 - [リンク](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF)
-- []()
+- [画像](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%94%BB%E5%83%8F)
 
 
 ## 見出し(#)
@@ -82,11 +82,54 @@ $```
 - [x] チェック1
 - [ ] チェック2
 
+## 強調
+```
+#斜体(*,_)
+通常 *斜体* 
+通常 _斜体_
+
+#太字(**,__)
+通常 **太字** 
+通常 __太字__
+
+#複合(***,___)
+通常 ***複合*** 
+通常 ___複合___
+```
+通常 *強調*  
+通常 _強調_  
+通常 **太字**   
+通常 __太字__  
+通常 ***複合***  
+通常 ___複合___
+
+## 水平線()
+```
+# *,-,_を3つ以上連続(間にスペースがあっても良い)
+* * *
+- - -
+_ _ _
+```
+1行目
+***
+2行目
+- - - 
+3行目
+_ _ _
+
 ## リンク
 ```
 [タイトル](URL)
+
+#定義参照リンク
+[タイトル][参照]
+[参照]:URL
 ```
 [このページ](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF)
+
+[参照リンク][url]  
+
+[url]: https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF
 
 ## 画像
 ```
@@ -95,3 +138,4 @@ or
 ![画像タイトル](パス)
 ```
 ![Lenna](image/Lenna.png)
+
