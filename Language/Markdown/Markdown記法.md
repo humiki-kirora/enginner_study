@@ -15,6 +15,7 @@
   - [リンク](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF)
   - [画像](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%94%BB%E5%83%8F)
 - [GFM限定]()
+  - [取り消し線]()
 
 [Top]: https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%96%87%E6%B3%95%E3%83%81%E3%83%BC%E3%83%88%E3%82%B7%E3%83%BC%E3%83%88
 
@@ -194,6 +195,10 @@ or
 [TOPに戻る][Top]  
 
 # Github Flavored Markdown(GFM)限定
-GitHubの独自仕様を加えたMarkdown記法
+GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもあるっぽい)
 
-- 
+## 取り消し線(~~)
+```
+~~取り消し~~
+```
+~~取り消し~~
