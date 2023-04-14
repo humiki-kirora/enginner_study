@@ -11,7 +11,7 @@
   - [引用](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%95%E7%94%A8)
   - [コード](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%82%B3%E3%83%BC%E3%83%89)
   - [チェックボックス](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9)
-  - [改行]()
+  - [改行](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%94%B9%E8%A1%8C)
   - [強調](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%B7%E8%AA%BF)
   - [水平線](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%B0%B4%E5%B9%B3%E7%B7%9A)
   - [表・テーブル](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E8%A1%A8%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB)
@@ -225,6 +225,13 @@ or
 
 # Github Flavored Markdown(GFM)限定
 GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもあるっぽい)
+
+## リンクテキスト簡易記法
+URLを記述するだけでリンクされる
+```
+https://www.google.co.jp/
+```
+https://www.google.co.jp/
 
 ## 取り消し線(~~)
 ```
