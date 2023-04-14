@@ -226,13 +226,6 @@ or
 # Github Flavored Markdown(GFM)限定
 GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもあるっぽい)
 
-## リンクテキスト簡易記法
-URLを記述するだけでリンクされる
-```
-https://www.google.co.jp/
-```
-https://www.google.co.jp/
-
 ## 取り消し線(~~)
 ```
 ~~取り消し~~
