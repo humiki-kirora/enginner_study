@@ -2,7 +2,7 @@
 見出しの装飾や強調等の文字修飾を簡単にできる記法  
 会議の議事録やメモ作成を効率化できるので覚えておくと便利
 
-# 文法チートシート
+# 構文チートシート
 - [共通記法](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%85%B1%E9%80%9A%E8%A8%98%E6%B3%95)
   - [見出し](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E8%A6%8B%E5%87%BA%E3%81%97)
   - [箇条書き](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%AE%87%E6%9D%A1%E6%9B%B8%E3%81%8D-)
