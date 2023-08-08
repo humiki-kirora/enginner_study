@@ -221,7 +221,15 @@ or
 
 <br>
 
-[TOPに戻る][Top]  
+[TOPに戻る][Top] 
+
+## 数式の挿入
+詳しくはKaTeX記法を参照
+```
+$KaTex記法$
+```
+$y =\begin{cases} 0 &text{if } b \\ 1 &text{if } a \end{cases}$
+
 
 # Github Flavored Markdown(GFM)限定
 GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもあるっぽい)
@@ -231,3 +239,4 @@ GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもある�
 ~~取り消し~~
 ```
 ~~取り消し~~
+
