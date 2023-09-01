@@ -234,22 +234,22 @@ $y =\begin{cases} 0 &text{if } b \\ 1 &text{if } a \end{cases}$
 
 ## グラフ
 グラフの向きはTB、TD、BT、RL、LRなどでどの方向からどの向きに書くかをコントロール可能<br>
-無向グラフも可能
+⇔を-に変えることで無向グラフも可能
 ```
 $```mermaid
 graph RL;
   A-->B;
-  A-->C;
+  A---C;
   B-->D;
   C-->D;
 $```
 ```
 
 ```mermaid
-graph LR;
-  A<-->B;
-  A-->C;
-  B<-->D;
+flowchart LR;
+  A-->B;
+  A---C;
+  B-->D;
   C-->D;
 ```
 
