@@ -230,6 +230,29 @@ $KaTex記法$
 ```
 $y =\begin{cases} 0 &text{if } b \\ 1 &text{if } a \end{cases}$
 
+# Mermaidによるクラス図作成
+
+## グラフ
+グラフの向きはTB、TD、BT、RL、LRなどでどの方向からどの向きに書くかをコントロール可能<br>
+無向グラフも可能
+```
+$```mermaid
+graph RL;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+$```
+```
+
+```mermaid
+graph LR;
+  A<-->B;
+  A-->C;
+  B<-->D;
+  C-->D;
+```
+
 
 # Github Flavored Markdown(GFM)限定
 GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもあるっぽい)
@@ -239,4 +262,3 @@ GitHubの独自仕様を加えたMarkdown記法(普通に使えるのもある�
 ~~取り消し~~
 ```
 ~~取り消し~~
-
