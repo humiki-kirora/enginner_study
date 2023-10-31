@@ -1,26 +1,33 @@
+<!-- omit in toc -->
 # Markdown記法
 見出しの装飾や強調等の文字修飾を簡単にできる記法  
 会議の議事録やメモ作成を効率化できるので覚えておくと便利  
 
+<!-- omit in toc -->
 # 構文チートシート
-抜けを見つけ次第追記していく予定
-- [共通記法](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%85%B1%E9%80%9A%E8%A8%98%E6%B3%95)
-  - [見出し](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E8%A6%8B%E5%87%BA%E3%81%97)
-  - [箇条書き](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%AE%87%E6%9D%A1%E6%9B%B8%E3%81%8D-)
-  - [番号付きリスト](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%95%AA%E5%8F%B7%E4%BB%98%E3%81%8D%E3%83%AA%E3%82%B9%E3%83%881)
-  - [引用](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%95%E7%94%A8)
-  - [コード](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%82%B3%E3%83%BC%E3%83%89)
-  - [チェックボックス](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9)
-  - [改行](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%94%B9%E8%A1%8C)
-  - [強調](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%BC%B7%E8%AA%BF)
-  - [水平線](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%B0%B4%E5%B9%B3%E7%B7%9A)
-  - [表・テーブル](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E8%A1%A8%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB)
-  - [リンク](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E3%83%AA%E3%83%B3%E3%82%AF)
-  - [画像](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E7%94%BB%E5%83%8F)
-- [GFM限定](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#github-flavored-markdowngfm%E9%99%90%E5%AE%9A)
-  - [取り消し線](https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E5%8F%96%E3%82%8A%E6%B6%88%E3%81%97%E7%B7%9A)
+- [共通記法](#共通記法)
+  - [見出し(#)](#見出し)
+- [見出し1](#見出し1)
+  - [見出し2](#見出し2)
+    - [見出し3](#見出し3)
+  - [箇条書き(-)](#箇条書き-)
+  - [番号付きリスト(1.)](#番号付きリスト1)
+  - [引用(\>)](#引用)
+  - [コード(\`\`\`)](#コード)
+  - [チェックボックス(\[\])](#チェックボックス)
+  - [改行](#改行)
+  - [強調](#強調)
+  - [水平線](#水平線)
+  - [表・テーブル](#表テーブル)
+  - [リンク](#リンク)
+  - [画像](#画像)
+  - [数式の挿入](#数式の挿入)
+- [Mermaidによるクラス図作成](#mermaidによるクラス図作成)
+  - [グラフ](#グラフ)
+- [Github Flavored Markdown(GFM)限定](#github-flavored-markdowngfm限定)
+  - [取り消し線(~~)](#取り消し線)
 
-[Top]: https://github.com/humiki-kirora/enginner_study/blob/main/Language/Markdown/Markdown%E8%A8%98%E6%B3%95.md#%E6%96%87%E6%B3%95%E3%83%81%E3%83%BC%E3%83%88%E3%82%B7%E3%83%BC%E3%83%88
+[Top]: #構文チートシート
 
 # 共通記法
 ## 見出し(#) 
