@@ -3,18 +3,121 @@
 著者 米田優峻 2022年9月16日初版
 
 # 目次
-- [序章 競技プログラミング入門](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#%E5%BA%8F%E7%AB%A0-%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E5%85%A5%E9%96%80)
-- [1章 アルゴリズムと計算量](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#1%E7%AB%A0-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E8%A8%88%E7%AE%97%E9%87%8F)
-- [2章 累積和](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#2%E7%AB%A0-%E7%B4%AF%E7%A9%8D%E5%92%8C)
-- [3章 二分探索](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#3%E7%AB%A0-%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2)
-- [4章 動的計画法](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#4%E7%AB%A0-%E5%8B%95%E7%9A%84%E8%A8%88%E7%94%BB)
-- [5章 数学的問題](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#5%E7%AB%A0-%E6%95%B0%E5%AD%A6%E7%9A%84%E5%95%8F)
-- [6章 考察テクニック](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#6%E7%AB%A0-%E8%80%83%E5%AF%9F%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF)
-- [7章 ヒューリスティック](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#7%E7%AB%A0-%E3%83%92%E3%83%A5%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF)
-- [8章 データ構造とクエリ処理](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#8%E7%AB%A0-%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E3%82%AF%E3%82%A8%E3%83%AA%E5%87%A6%E7%90%86)
-- [9章 グラフアルゴリズム](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#9%E7%AB%A0-%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)
-- [10章 総合問題](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#10%E7%AB%A0-%E7%B7%8F%E5%90%88%E5%95%8F%E9%A1%8C)
-- [終章 さらに上達するには](https://github.com/humiki-kirora/enginner_study/blob/main/%E8%AA%AD%E6%9B%B8/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E9%89%84%E5%89%87.md#%E7%B5%82%E7%AB%A0-%E3%81%95%E3%82%89%E3%81%AB%E4%B8%8A%E9%81%94%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF)
+- [目次](#目次)
+- [序章 競技プログラミング入門](#序章-競技プログラミング入門)
+  - [競技プログラミングとは](#競技プログラミングとは)
+  - [コンテストの種類](#コンテストの種類)
+  - [競技プログラミングで求められること](#競技プログラミングで求められること)
+  - [本書の進め方](#本書の進め方)
+- [1章 アルゴリズムと計算量](#1章-アルゴリズムと計算量)
+  - [アルゴリズムとは](#アルゴリズムとは)
+    - [具体例1 1+2+...+50を計算](#具体例1-1250を計算)
+    - [具体例2 迷路の最短手数](#具体例2-迷路の最短手数)
+  - [計算量](#計算量)
+    - [計算量の例](#計算量の例)
+    - [計算量の目安](#計算量の目安)
+  - [第1章のゴール](#第1章のゴール)
+  - [1.1 導入問題](#11-導入問題)
+    - [A01 Thre First Problem ★1](#a01-thre-first-problem-1)
+    - [B01 A+B Problem](#b01-ab-problem)
+  - [1.2 全探索(1) ★1](#12-全探索1-1)
+    - [A02 Linear Search](#a02-linear-search)
+  - [1.3 全探索(2)](#13-全探索2)
+    - [A03 Two Cards ★1](#a03-two-cards-1)
+    - [B03 Supermarket 1](#b03-supermarket-1)
+  - [1.4 2進法](#14-2進法)
+    - [A04 Binary Representation 1 ★2](#a04-binary-representation-1-2)
+    - [B04 Binary Representation 2](#b04-binary-representation-2)
+    - [1.5 チャレンジ問題 ★2](#15-チャレンジ問題-2)
+    - [ビット全探索](#ビット全探索)
+- [2章 累積和](#2章-累積和)
+  - [2.0 累積和とは](#20-累積和とは)
+  - [2.1 一次元の累積和(1)](#21-一次元の累積和1)
+    - [A06 How Many Guests? ★2](#a06-how-many-guests-2)
+    - [B06 Lottery](#b06-lottery)
+  - [2.2 一次元の累積和](#22-一次元の累積和)
+    - [A07 Event Attendance ★3](#a07-event-attendance-3)
+    - [B07 Convenience Store 2](#b07-convenience-store-2)
+  - [2.3 二次元の累積和](#23-二次元の累積和)
+    - [A08 Two DImensional Sum ★4](#a08-two-dimensional-sum-4)
+    - [B08 Counting Points](#b08-counting-points)
+  - [2.4 二次元の累積和(2)](#24-二次元の累積和2)
+    - [A09 Winter in ALGO Kingdom ★4](#a09-winter-in-algo-kingdom-4)
+    - [B09 Papers](#b09-papers)
+  - [2.5 チャレンジ問題](#25-チャレンジ問題)
+    - [A10 Resort Hotel ★4](#a10-resort-hotel-4)
+- [3章 二分探索](#3章-二分探索)
+- [4章 動的計画](#4章-動的計画)
+  - [4.0 動的計画法とは](#40-動的計画法とは)
+  - [4.1 動的計画法の基本](#41-動的計画法の基本)
+    - [A16 Dungeon1 ★2](#a16-dungeon1-2)
+    - [B16 Frog 1](#b16-frog-1)
+  - [4.2 動的計画法の復元](#42-動的計画法の復元)
+    - [A17 Dungeon2 ★3](#a17-dungeon2-3)
+    - [B17 Frog 1 with Restoration](#b17-frog-1-with-restoration)
+  - [4.3 二次元のDP(1):部分和問題](#43-二次元のdp1部分和問題)
+    - [A18 Subset Sum ★3](#a18-subset-sum-3)
+    - [B18 Subset Sum with Restoration](#b18-subset-sum-with-restoration)
+  - [4.4 二次元のDP(2):ナップザック問題](#44-二次元のdp2ナップザック問題)
+    - [A19 Knapsack1 ★3](#a19-knapsack1-3)
+    - [B19 knapsack2](#b19-knapsack2)
+  - [4.5 二次元のDP(3):最長共通部分列問題](#45-二次元のdp3最長共通部分列問題)
+    - [A20 LSC ★4](#a20-lsc-4)
+    - [B20 Edit Distance](#b20-edit-distance)
+  - [4.6 二次元のDP(4):区間DP](#46-二次元のdp4区間dp)
+    - [A21 Block Game ★4](#a21-block-game-4)
+    - [B21 Longest Subpalindrome](#b21-longest-subpalindrome)
+- [5章 数学的問題](#5章-数学的問題)
+  - [5.0 数学的問題について](#50-数学的問題について)
+  - [5.1 素数判定](#51-素数判定)
+    - [A26 Prime Check ★2](#a26-prime-check-2)
+    - [B26 Output Prime Numbers](#b26-output-prime-numbers)
+  - [5.2 最大公約数](#52-最大公約数)
+    - [A27 Calculate GCD ★2](#a27-calculate-gcd-2)
+    - [B26 Calculate LCM](#b26-calculate-lcm)
+  - [5.3 余りの計算(1):基本](#53-余りの計算1基本)
+    - [A28 Blackboards ★2](#a28-blackboards-2)
+    - [B28 Fibonacci Easy (mod 1000000007)](#b28-fibonacci-easy-mod-1000000007)
+  - [5.4 余りの計算(2)：累乗](#54-余りの計算2累乗)
+    - [A29 Power ★3](#a29-power-3)
+    - [B29 Power Hard](#b29-power-hard)
+  - [5.5 余りの計算(3):割り算](#55-余りの計算3割り算)
+    - [A30 Combination ★4](#a30-combination-4)
+    - [B30 Combination2](#b30-combination2)
+  - [5.6 包除原理](#56-包除原理)
+    - [A31 Divisors ★2](#a31-divisors-2)
+- [6章 考察テクニック](#6章-考察テクニック)
+- [7章 ヒューリスティック](#7章-ヒューリスティック)
+- [8章 データ構造とクエリ処理](#8章-データ構造とクエリ処理)
+- [9章 グラフアルゴリズム](#9章-グラフアルゴリズム)
+  - [9.0 グラフとは](#90-グラフとは)
+  - [9.1 グラフの実装方法](#91-グラフの実装方法)
+    - [A61 Adjacent Vertices](#a61-adjacent-vertices)
+    - [B61 Influencer](#b61-influencer)
+  - [9.2 深さ優先探索](#92-深さ優先探索)
+    - [A62 Depth First Search ★3](#a62-depth-first-search-3)
+    - [B62 Print a Path](#b62-print-a-path)
+  - [9.3 幅優先探索](#93-幅優先探索)
+    - [A63 Shortest Path 1 ★3](#a63-shortest-path-1-3)
+      - [実装方法](#実装方法)
+  - [B63 幅優先探索](#b63-幅優先探索)
+  - [9.4 ダイクストラ法](#94-ダイクストラ法)
+    - [A64 Shortest Path 2 ★4](#a64-shortest-path-2-4)
+    - [B64 Print a Path](#b64-print-a-path)
+  - [9.5 木に対する動的計画法](#95-木に対する動的計画法)
+    - [A65 Road to Promotion ★4](#a65-road-to-promotion-4)
+    - [B65 Road to Promotion Hard](#b65-road-to-promotion-hard)
+  - [9.6 Union-Find 木](#96-union-find-木)
+    - [Connect Query ★3](#connect-query-3)
+    - [B66 Typhoon](#b66-typhoon)
+  - [9.7 最小全域木問題](#97-最小全域木問題)
+    - [A67 MST ★5](#a67-mst-5)
+    - [B67 Max MST](#b67-max-mst)
+  - [9.8 最大フロー問題](#98-最大フロー問題)
+    - [A68 Maximum Flow ★6](#a68-maximum-flow-6)
+- [10章 総合問題](#10章-総合問題)
+- [終章 さらに上達するには](#終章-さらに上達するには)
+
 
 
 # 序章 競技プログラミング入門
@@ -1805,6 +1908,326 @@ int main(){
     cout << lcm(A,B) << endl;
     return 0;
 }
+```
+
+
+## 5.3 余りの計算(1):基本
+### A28 Blackboards ★2
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ab
+
+各計算過程での10000で割った時の余りを求める問題<br>
+そのまま馬鹿正直に計算すると途中でオーバーフローを起こしてしまうため、工夫する必要がある<br>
+余りの性質として、**足し算、引き算、掛け算においては好きなタイミングで余りをとっても答えが変わらない**性質がある。
+それを利用して各計算の後に今ある数を10000で割った余りを代入してあげることでオーバーフローを防ぐ事が可能<br>
+ただし、引き算だけは負の値になってしまう可能性があるので、その場合には10000を加算することで、余りを変えずに正の値に戻して上げる必要がある
+
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+ 
+int main(){
+    ULLong N;
+    cin >> N;;
+
+    int ans = 0;
+    for(int i = 0; i < N; i ++){
+        char t;
+        int a;
+        cin >> t >> a;
+
+        switch (t)
+        {
+        case '+':
+            ans += a;
+            break;
+        case '-':
+            ans -= a;
+            if(ans < 0) ans += 10000;
+            break;
+        case '*':
+            ans *= a;
+            break;
+        
+        default:
+            break;
+        }
+        ans = ans % 10000;
+        cout << ans << endl;
+    }
+
+    return 0;
+}
+```
+
+### B28 Fibonacci Easy (mod 1000000007)
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_ap
+
+基本的にはA28の問題と同様の性質を活用して計算する。<br>
+フィボナッチ数列は二つ前と一つ前の数字を足した数の数列であるが、常に算出した値の余りを計算するようにして、その余り同士を足し合わせる事でオーバーフローを防げる。
+
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+
+int main(){
+    ULLong N;
+    cin >> N;
+
+    ULLong mod = 1e9 + 7;
+
+    ULLong a1 = 1;
+    ULLong a2 = 1;
+    ULLong a3;
+    for(int i = 3; i <= N; i ++){
+        a3 = a1 + a2;
+        a1 = a2;
+        a2 = a3 % mod;
+    } 
+
+    cout << a2 << endl;
+
+    return 0;
+}
+```
+
+## 5.4 余りの計算(2)：累乗
+### A29 Power ★3
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_aq
+
+そのままシンプルに解くことを考えると、bの数まで順にaをかけていけば良いが、これだと時間切れになる<br>
+そこで,5.0節でやったような考え方で高速に計算することを考える。<br>
+例えば $a^{13}$ を計算することを考えると、通常13回の掛け算が必要だが、
+- $a^1 \times a^1 = a^2$ を計算
+- $a^2 \times a^2 = a^4$ を計算
+- $a^4 \times a^4 = a^8$ を計算
+- $a^8 \times a^4 \times a^1 = a^13$ を計算<br>
+というように計5回の掛け算で計算することが可能
+
+またオーバーフローについては前回の掛け算では好きなタイミングで余りをとっても答えは変わらない性質を用いて、適宜計算タイミングでmodを計算しておくことで防ぐ事ができる<br>
+
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+
+/*b = 7 とすると、a^7 = a^4 * a^2 * a^1に分けて計算するイメージ*/
+ULLong power(ULLong a, ULLong b,ULLong mod){
+    ULLong p = a, answer = 1;
+    for(int i = 0; i < 30; i ++){
+        int wari = (1 << i);
+        int tmp = (b/wari);
+        if(tmp == 0) break;
+        if(tmp % 2 == 1){
+            answer = (answer * p) % mod;
+        }
+        p = (p * p) % mod; 
+    }
+    return answer;
+}
+
+ 
+int main(){
+    ULLong a,b;
+    cin >> a >> b;
+
+    ULLong mod = 1e9 + 7;
+    cout << power(a,b,mod) << endl;
+
+    return 0;
+}
+```
+
+### B29 Power Hard
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_db
+
+基本的にはA29と同じだが、bの制約がかなり大きくなっている。A29の時はi=32で計算できる範囲だったが、これを更に拡張する必要がある。while文に変更して途中でbreakできるように実装することで、i=64まで対応可能にした。<br>
+注意点としてはシフト演算子の型に気をつける必要がある。そのまま1としてしまうとint型になってしまうので、31以上の計算ができない。1ULLとしてunsigned long long型として定義してあげる必要があることを忘れないように
+
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+
+/*b = 7 とすると、a^7 = a^4 * a^2 * a^1に分けて計算するイメージ*/
+ULLong power(ULLong a, ULLong b,ULLong mod){
+    ULLong p = a, answer = 1;
+    int i = 0;
+    while(true){
+        ULLong wari = (1ULL << i);
+        ULLong tmp = (b/wari);
+        if(tmp == 0) break;
+        if(tmp % 2 == 1){
+            answer = (answer * p) % mod;
+        }
+        p = (p * p) % mod;
+        i++;
+    }
+    return answer;
+}
+
+ 
+int main(){
+    ULLong a,b;
+    cin >> a >> b;
+
+    ULLong mod = 1e9 + 7;
+    cout << power(a,b,mod) << endl;
+
+    return 0;
+}
+```
+
+## 5.5 余りの計算(3):割り算
+### A30 Combination ★4
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ad
+
+足し算、引き算、掛け算については計算過程のどのタイミングでmodをとっても答えは変わらないが、割り算の場合はそうはいかない。<br>
+割り算の場合は以下の性質があることの把握する必要がある
+>Mを素数として、bをMで割り切れない整数であるとする。この時、Mで割った余りを求める問題では「 $\div b$ 」を「 $\times b^{M - 2}$ 」と変換しても答えは変わらない
+
+この性質の証明は難しいので、詳しくは説明しないが、**フェルマーの小定理**が深く関連している。
+
+実際にこの性質を使用して問題を解く場合以下のような流れで処理を行う.<br>
+例) $12 \div 3$ を5で割った余りを求める
+1. 分母分子を5で割った余りを求める $2 \div 3$
+2. $\div 3$ を $\times 3^{5-2}$ に変更　$2 \times 3^{5-2}$
+3. 直接計算 54
+4. 実際に余りをとる 5
+
+直接計算とあるが、「 $\times b^{M - 2}$ 」に変更した後は好きなタイミングで余りを取れるので、 $b^{M - 2}$ の余りを5.4節の累乗の余りの計算方法で先に計算してあげると楽に計算できる
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+
+ULLong power(ULLong a, ULLong b,ULLong mod){
+    ULLong p = a, answer = 1;
+    int i = 0;
+    while(true){
+        ULLong wari = (1ULL << i);
+        ULLong tmp = (b/wari);
+        if(tmp == 0) break;
+        if(tmp % 2 == 1){
+            answer = (answer * p) % mod;
+        }
+        p = (p * p) % mod;
+        i++;
+    }
+    return answer;
+}
+ 
+int main(){
+    ULLong n,r;
+    cin >> n >> r;
+
+    ULLong mod = 1e9 + 7;
+
+    ULLong a = 1;
+    for(int i = 1; i <= n; i ++){
+        a *= i;
+        a = a % mod;
+    }
+
+    ULLong b = 1;
+    for(int i = 1; i <= r; i ++){
+        b *= i;
+        b = b % mod;
+    }
+
+    for(int i = 1; i <= (n - r); i ++){
+        b *= i;
+        b = b % mod;
+    }
+
+    ULLong ans = (a * power(b,mod - 2,mod)) % mod;
+    cout << ans << endl;
+
+    return 0;
+}
+```
+
+### B30 Combination2
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_dc
+
+A30とほぼ同じ解法で解ける。ようは定式化ができるかどうかの問題<br>
+(1,1)の座標から(H,W)まで行くのに、H方向への移動がH-1回、W方向への移動をW-1回の計W+H-2回の移動を行う。その中でどの順序で移動しても良いので、総移動回数H+W-2回の移動の中でHまたはW方向へ移動するタイミングの組み合わせを考えて上げれば良い<br>
+つまり、 $_{H+W-2}C_{H - 1}$ か $_{H+W-2}C_{W - 1}$ についてA30と同様の方法で解いて上げればよい<br>
+
+```C++
+#include <bits/stdc++.h>
+using namespace std;
+#define ULLong unsigned long long
+#define ULong unsigned long
+#define LLong long long
+#define Long long
+
+ULLong power(ULLong a, ULLong b,ULLong mod){
+    ULLong p = a, answer = 1;
+    int i = 0;
+    while(true){
+        ULLong wari = (1ULL << i);
+        ULLong tmp = (b/wari);
+        if(tmp == 0) break;
+        if(tmp % 2 == 1){
+            answer = (answer * p) % mod;
+        }
+        p = (p * p) % mod;
+        i++;
+    }
+    return answer;
+}
+ 
+int main(){
+    ULLong H,W;
+    cin >> H >> W;
+    ULLong mod = 1e9 + 7;
+
+    ULLong a = 1;
+    for(int i = 1; i <= (H + W - 2); i ++){
+        a *= i;
+        a = a % mod;
+    }
+
+    ULLong b = 1;
+    for(int i = 1; i <= (H - 1); i ++){
+        b *= i;
+        b = b % mod;
+    }
+
+    for(int i = 1; i <= (W - 1); i ++){
+        b *= i;
+        b = b % mod;
+    }
+
+    ULLong ans = (a * power(b,mod - 2,mod)) % mod;
+    cout << ans << endl;
+
+    return 0;
+}
+```
+
+## 5.6 包除原理
+### A31 Divisors ★2
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ae
+
+```C++
 ```
 
 # 6章 考察テクニック
