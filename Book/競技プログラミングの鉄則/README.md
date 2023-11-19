@@ -82,7 +82,7 @@
     - [B26 Output Prime Numbers](#b26-output-prime-numbers)
   - [5.2 最大公約数](#52-最大公約数)
     - [A27 Calculate GCD ★2](#a27-calculate-gcd-2)
-    - [B26 Calculate LCM](#b26-calculate-lcm)
+    - [B27 Calculate LCM](#b27-calculate-lcm)
   - [5.3 余りの計算(1):基本](#53-余りの計算1基本)
     - [A28 Blackboards ★2](#a28-blackboards-2)
     - [B28 Fibonacci Easy (mod 1000000007)](#b28-fibonacci-easy-mod-1000000007)
@@ -2099,14 +2099,14 @@ int main(){
 }
 ```
 
-### B26 Calculate LCM
+### B27 Calculate LCM
 問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cz
 
 今度は最小公倍数( $LCM$ )を求める問題。しかしこちらは最大公約数( $GCD$ )の結果を使う事で簡単に解くことが可能<br>
 二つの整数A,Bの最大公約数 $gcd$ がある時、A,Bはそれぞれ以下のように表せる<br>
 
- $A = gcd \times A固有の素因数の積　B = gcd \times B固有の素因数の積 $ <br>
- $LCM = gcd \times A固有の素因数の積 \times B固有の素因数の積 $ <br>
+ $A = gcd \times A固有の素因数の積　B = gcd \times B固有の素因数の積$ <br>
+ $LCM = gcd \times A固有の素因数の積 \times B固有の素因数の積$ <br>
 したがって以上の関係性から、 $A\times B \div gcd$ で最小公倍数 $LCM$ を計算することが可能となる<br>
 
 ```C++
@@ -2394,7 +2394,7 @@ int main(){
 
 A30とほぼ同じ解法で解ける。ようは定式化ができるかどうかの問題<br>
 (1,1)の座標から(H,W)まで行くのに、H方向への移動がH-1回、W方向への移動をW-1回の計W+H-2回の移動を行う。その中でどの順序で移動しても良いので、総移動回数H+W-2回の移動の中でHまたはW方向へ移動するタイミングの組み合わせを考えて上げれば良い<br>
-つまり、  $_{H+W-2}C_{H - 1}$ か  $_{H+W-2}C_{W - 1}$ についてA30と同様の方法で解いて上げればよい<br>
+つまり、  $ _{H+W-2}C_{H - 1}$ か  $ _{H+W-2}C_{W - 1}$ についてA30と同様の方法で解いて上げればよい<br>
 
 ```C++
 #include <bits/stdc++.h>
