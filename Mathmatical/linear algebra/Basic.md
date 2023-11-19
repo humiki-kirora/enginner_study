@@ -158,8 +158,8 @@ $n×n$以上の大きさの行列の逆行列を求める際は[掃き出し法]
 ### 転置行列
 
 ある $m×n$ の行列$A$がある時、行と列の要素を入れ替えて $n×m$ の行列に変換した行列 $A^\top$ を**転置行列**と呼ぶ<br>
-例)<br>
-$A =  \begin{bmatrix} 1 & 2 & 3 \\ 4 & 2 & 1 \end{bmatrix} A^\top = \begin{bmatrix} 1 & 4 \\ 2 & 2 \\ 3 & 1 \end{bmatrix}$
+
+$$A =  \begin{bmatrix} 1 & 2 & 3 \\ 4 & 2 & 1 \end{bmatrix} A^\top = \begin{bmatrix} 1 & 4 \\ 2 & 2 \\ 3 & 1 \end{bmatrix}$$
 
 ## 掃き出し法(ガウスの消去法)
 
