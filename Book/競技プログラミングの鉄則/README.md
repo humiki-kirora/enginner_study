@@ -1,8 +1,9 @@
 開始日 2023/05/08  
-読了日 2023/ * / *  
+読了日 2023/ */*  
 著者 米田優峻 2022年9月16日初版
 
 # 目次
+
 - [目次](#目次)
 - [序章 競技プログラミング入門](#序章-競技プログラミング入門)
   - [競技プログラミングとは](#競技プログラミングとは)
@@ -126,16 +127,16 @@
 - [10章 総合問題](#10章-総合問題)
 - [終章 さらに上達するには](#終章-さらに上達するには)
 
-
-
 # 序章 競技プログラミング入門
 
 ## 競技プログラミングとは
+
 プログラミングの問題を解くことを競技にしたもので「競プロ」と言われるもの  
 約15年程度前に本格的に始まった競技だが、現在国内だけで3万人程度のアクティブユーザがおり、中高生からプログラマまで幅広い層が参加しており、コーディングスキル向上や教育などの目的で利用されることも多い
 
 ## コンテストの種類
-- AtCoder (https://atcoder.jp/?lang=ja)  
+
+- AtCoder (<https://atcoder.jp/?lang=ja>)  
 日本最大手のプログラミングコンテスト  毎週末21時からオンラインで開催  
 コンテストの成績に応じたレーティングがつけられるという特徴があり、強さの照明になるという点で、技術系のアルバイトや就職活動に利用されることもある  
 
@@ -154,13 +155,14 @@ Google社が毎年開催している競技プログラミングの大会
 世界各地から毎年2万人程度が予選に参加  
 2時間半で3~4問解く形式で行われて、3回の予選を勝ち抜いた上位25人は現地で行われる決勝戦に参加できる
 
-- アルゴリズム実技検定(PAST)(https://past.atcoder.jp/)  
+- アルゴリズム実技検定(PAST)(<https://past.atcoder.jp/>)  
 日本初のアルゴリズム構築能力を測る検定試験  
 AtCoder社が主催しており、検定料は8800円と金がかかるが、基準点に達した場合は「アルゴリズムができる人材」の証明になるため、市場価値のアップに繋がる
 
 この中ではAtCoder、Google Code Jam、アルゴリズム実技検定(PAST)が自分には関係ありそう  
 
 ## 競技プログラミングで求められること
+
 - プログラミング能力  
 プログラミングを書く必要があるので、どれかの一つの言語について必要な機能を利用して希望通りの機能を素早くコーディングする能力が求められる
 
@@ -174,6 +176,7 @@ AtCoder社が主催しており、検定料は8800円と金がかかるが、基
 また複雑な問題を整理して解き切るために必要な論理的思考力も重要
 
 ## 本書の進め方
+
 - 読み方
 全部で10章で構成されており、1章で競技プログラミングで戦う上での基礎となるアルゴリズムや計算量について概観する。  
 2~9章以降は頻出の典型アルゴリズムや考察テクニックについて触れている  
@@ -182,26 +185,31 @@ AtCoder社が主催しており、検定料は8800円と金がかかるが、基
 - 例題・応用問題・力試し問題  
 ★1~6の難易度の問題が用意されており、難易度が高いほど知識や応用力が必要になる
 
-- 自動採点システム (https://atcoder.jp/contests/tessoku-book)  
+- 自動採点システム (<https://atcoder.jp/contests/tessoku-book>)  
 本書の例題・応用問題・力試し問題を正しいか機械的に判定する自動採点システムがあるため利用可能
 
 # 1章 アルゴリズムと計算量  
 
 ## アルゴリズムとは
+
 アルゴリズムとは問題を解くための**計算の手順**のこと  
 同じ問題を解くとしても複数のアルゴリズムが考えられ、効率の良し悪しが異なる場合がある
 
 ### 具体例1 1+2+...+50を計算
+
 一番ナイーブな方法としては1から順に足し算を行う方法でこれでも正解の1275を求める事ができる  
 ただし、足し算を49回行う必要があり、計算するのが大変である  
 
 そこで、以下のように考える
+
 ```
  1 + 2 + 3 + ... + 50 = (1 + 50) + (2 + 49) + (3 + 48) + ... + (25 + 26) = 51 * 25 
 ```
+
 このように51が25個存在しているという風に考えることで、一回の掛け算の計算で答えを得ることができ、効率的に計算が可能  
 
 ### 具体例2 迷路の最短手数
+
 以下の迷路の最短経路を求めることを考える  
 ![迷路](images/1_maize.png)
 
@@ -220,6 +228,7 @@ AtCoder社が主催しており、検定料は8800円と金がかかるが、基
 このように同じ問題を解くにしても複数のアルゴリズムがあり、効率が大きく異なる  
 
 ## 計算量
+
 アルゴリズムによって効率が変化するのは分かったが、アルゴリズムの効率をどのように評価するべきか  
 どこで用いられるのが**計算量**という概念
 
@@ -232,25 +241,31 @@ AtCoder社が主催しており、検定料は8800円と金がかかるが、基
 |  O(2^N)  |  計算化数が概ね2^Nに比例する  |
 
 ### 計算量の例
+
 先ほどの[具体例1]()で説明した1ずつ足していく方法はN - 1回の足し算が必要なので計算量は*O(N)*
 それに対し、工夫した解法の方は1回の掛け算で済むため、*O(1)*となる
 
 このように*O*記法では大まかな計算回数を表している
 
 ### 計算量の目安
+
 各計算量における計算回数とNの関係を以下の表に示す  
 家庭用PCの計算速度は毎秒10億回程度であるため、10^9を超える部分は赤色になっている  
 競技プログラミングにおいては、赤色で塗られた部分については正解となる可能性は低い
 ![](images/1_O_table.png)
 
 ## 第1章のゴール
+
 次に全5問の例題を通して、アルゴリズムと計算量に関する理解と競技プログラミングの問題形式に慣れることを目指す  
 
 ## 1.1 導入問題
+
 ### A01 Thre First Problem ★1
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_a
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_a>
 
 特に何も難しいことはないのでそのまま解ける
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -263,11 +278,12 @@ int main(){
 }
 ```
 
-
 ### B01 A+B Problem
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bz  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bz>  
 
 特に何も難しいことはないのでそのまま解ける
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -281,13 +297,17 @@ int main(){
 ```
 
 ## 1.2 全探索(1) ★1
+
 **全探索**は有り得る全てのパターンを調べ上げる方針で問題を解く方法  
 Ex)4桁の暗証番号を0000~9999までのすべての番号を試す  
 一番シンプルで確実に解けるが、時間的には効率が悪い
+
 ### A02 Linear Search
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_b  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_b>  
 
 set<>を使うと重複を避けられる
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -315,10 +335,13 @@ int main(){
 ```
 
 ## 1.3 全探索(2)
+
 ### A03 Two Cards ★1
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_c  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_c>  
 
 P+Qのパターンを二重ループで全て試すと正解できる
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -347,9 +370,11 @@ int main(){
 ```
 
 ### B03 Supermarket 1
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cb
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cb>
 
 3重ループで全パターンを試す
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -376,11 +401,15 @@ int main(){
     return 0;
 }
 ```
+
 ## 1.4 2進法
+
 ### A04 Binary Representation 1 ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_d
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_d>
 
 普通に10進数を2進数に変更する方法を試す
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -411,6 +440,7 @@ int main(){
 
 **別解**  
 対象の数字を2^n(n=0~9)までの数で割った余りを表示すれば簡単に解ける　　
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -430,9 +460,11 @@ int main(){
 ```
 
 ### B04 Binary Representation 2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cc
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cc>
 
 2⇒10進数変換では10で割った余りを用いて、位に応じてシフトしたものの合計を計算すればよい
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -453,10 +485,13 @@ int main(){
     return 0;
 }
 ```
+
 ### 1.5 チャレンジ問題 ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_e
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_e>
 
 2枚のカードが決まれば3枚目は自動的に決まるので2重ループの探索で求まる
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -479,6 +514,7 @@ int main(){
 ```
 
 ### ビット全探索
+
 本格的な全探索問題として、以下の部分和問題を考える
 > N枚のカードがあり、1からNまでの番号がつけられている。
 > カードiには整数Aiが描かれており、カードの中からいくつか選び、書かれた整数の合計がSとなるような方法があるかを判定する
@@ -528,11 +564,13 @@ int main(){
 ```
 
 # 2章 累積和
+
 ## 2.0 累積和とは
+
 最初に、以下の計算問題を考える
 > ある遊園地では、1月前半の来場者数が以下の表のようになった。
 > 4-13、3-10、2-15までの総来場者数を計算してください
- 
+
 ![](images/2_%E7%B4%AF%E7%A9%8D%E5%92%8C%E4%BE%8B%E9%A1%8C1.png)
 
 単純に考えるならば、1/4~1/13までの来場者数の総和をそのまま計算するだけで良いが、
@@ -543,6 +581,7 @@ int main(){
 ![](images/2_%E7%B4%AF%E7%A9%8D%E5%92%8C%E4%BE%8B%E9%A1%8C2.png)
 
 この表を前もって計算しておくことで、以下の一回の引き算で期間の総来場者数を求めることができる
+
 - 1/4~13の総来場者数　= 1/13時点の累積来場者数 - 1/3時点の累積来場者数
 - 1/3~10の総来場者数　= 1/10時点の累積来場者数 - 1/2時点の累積来場者数
 - 1/2~15の総来場者数　= 1/15時点の累積来場者数 - 1/1時点の累積来場者数
@@ -550,11 +589,14 @@ int main(){
 このように配列の先頭からの累積値を記録した累積和を前もって計算しておくと効率的に範囲の合計を計算できるようになる
 
 ## 2.1 一次元の累積和(1)
+
 ### A06 How Many Guests? ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_ai
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_ai>
 
 そのままAの累積和を計算してから、引き算を行う  
 累積和の日にちを0日目から計算することで、if文を使わずにスムーズに計算可能
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -586,10 +628,12 @@ int main(){
 ```
 
 ### B06 Lottery
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ce
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ce>
 
 当たりの累積和を計算して、その区間の当たりの数を計算  
 その後、その区間の日数と当たりの数を照らし合わせて判定すればよい
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -627,8 +671,10 @@ int main(){
 ```
 
 ## 2.2 一次元の累積和
+
 ### A07 Event Attendance ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_g
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_g>
 
 普通にやると、各人の参加日程を調べて、その日程分プラスしていくという処理が必要になるが  
 日程が多いとそれだけで処理時間がかなり増えてしまい時間切れになる  
@@ -642,10 +688,11 @@ L日目に1人増えるので+1,R - 1日は1人減るので-1という風に記�
 
 ここで先ほどのD=10^5 N=10^5の例との計算量を比較してみる  
 前日比の累積和を使用したアルゴリズムでは以下の計算が行われる
+
 - 1人に対して加算回数は2回だけなので、10^5 * 2
 - 累積和を計算するのに、10^5回の加算処理
 
-そのため、加算回数は```10^5 * 2 + 10^5 = 10^5 * 3 < 10^10```となり、より少ない計算回数で問題を解く事が可能となる
+そのため、加算回数は```10^5 *2 + 10^5 = 10^5* 3 < 10^10```となり、より少ない計算回数で問題を解く事が可能となる
 
 ```C++
 #include <bits/stdc++.h>
@@ -680,7 +727,8 @@ int main(){
 ```
 
 ### B07 Convenience Store 2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_al  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_al>  
 
 A07と基本的には同じように解く  
 今回は前日比の代わりに、先に時刻Tにおける人数の増減を記録することで、
@@ -718,8 +766,10 @@ int main(){
 ```
 
 ## 2.3 二次元の累積和
+
 ### A08 Two DImensional Sum ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_h  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_h>  
 
 累積和は1次元だけでなく、2次元にも適用することが可能  
 二次元の累積を取る場合は、先に行方向の累積和を計算し、その計算結果を元に列方向の累積和を計算することで、
@@ -775,9 +825,11 @@ int main(){
 ```
 
 ### B08 Counting Points
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cg  
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cg>  
 
 A08同様に二次元累積和を計算すれば計算可能
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -840,8 +892,10 @@ int main(){
 ```
 
 ## 2.4 二次元の累積和(2)
+
 ### A09 Winter in ALGO Kingdom ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_i
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_i>
 
 前日比の累積和の応用で解くことが可能  
 以下の画像を例に説明すると、(2,2) ~ (4,4)の範囲に雪が降ったとする<br>
@@ -904,8 +958,10 @@ int main(){
     return 0;
 }
 ```
+
 ### B09 Papers
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ch
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ch>
 
 A09同様二次元配列の前回比を考えると解くことができる。  
 座標の扱いで少し苦戦したので、実際に図に落として考えてみると整理しやすいかもしれない
@@ -977,8 +1033,10 @@ int main(){
 ```
 
 ## 2.5 チャレンジ問題
+
 ### A10 Resort Hotel ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_j<br>
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_j<br>>
 
 累積和の応用で解くことが可能<br>
 以下の図で説明すると、このように使用できない範囲が決まっている場合、この状況での最大値は、`max(1~2号室の最大値、6~7号室の最大値)`で求める事が可能<br>
@@ -1027,12 +1085,15 @@ int main(){
 ```
 
 # 3章 二分探索
+
 ## 3.0 二分探索とは
+>
 >1以上64以下の整数を思い浮かべ、あなたはYes/Noで答えられる質問を6回まで行う事が可能。思い浮かべた数字を特定してください
 
 このような問題がある時、素直に解くのであれば、1~64まで順に質問すればいつかはあてられるが、回数制限があるのでそれはできない
 
 そこで、あらゆる候補の中で中央で区切る質問を繰り返すと、確実に6回で解くことが可能
+
 1. 32以上か?⇒No 1~31
 2. 16以上か?⇒Yes 16~31
 3. 24以上か?⇒Yes 24~31
@@ -1043,11 +1104,14 @@ int main(){
 こういった中央に区切りながら探索範囲を半分ずつにしていくアルゴリズムを**二分探索法**という、この章ではこの二分探索法の実装について解説していく
 
 ## 3.1 配列の二分探索
+
 ### A11　Binary Search 1　★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_k
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_k>
 
 素直に二分探索で解ける
 途中で同じ数を見つけた場合はそこで探索を止めた方が効率的ではある
+
 ```C++
 #include <bits/stdc++.h>
 
@@ -1082,13 +1146,15 @@ int main(){
 ```
 
 ちなみに今回二分探索を自力で実装しているが、C++には二分探索用のライブラリが既に用意されている。
+
 ```
 lower_bound:任意の整数以下の整数の中で最大の数値のインデックスを返す
 upper_bound:任意の整数以上の大きい整数の中で最小の数値のインデックスを返す
 ```
 
 ### B11 Binary Search 2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cj
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cj>
 
 小さい順に並んでいるとは限らないという文がある。二分探索はソートされた配列にしか使用できないので、先に**sort()**してあげてから、**lower_bound()**で二分探索して、**distance**でインデックスの位置を把握してあげれば解ける
 
@@ -1119,11 +1185,14 @@ int main(){
 ```
 
 ## 3.2 答えで二分探索
+
 ### A12 Printer ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_l
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_l>
 
 今回は配列自体に二分探索を行うのではなく、配列から計算できる値で二分探索することになる。つまり、任意のN秒の時に作られるチラシの枚数を数える関数を作成して、 $[1,10^9]$　秒の範囲で二分探索を行ってあげればよい。
-1.  $10^9 \div 2$ 秒の時のチラシの枚数を数える
+
+1. $10^9 \div 2$ 秒の時のチラシの枚数を数える
 2. 大小を判定、範囲を更新
 3. 更新した範囲の中央の値でチラシの枚数を数える
 4. 2~3を範囲が一意に定まるまで、繰り返す
@@ -1169,11 +1238,13 @@ int main(){
 ```
 
 ### B12 Equation
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ck
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ck>
 
 今回は範囲が浮動小数点型であることに注意。
 式より  $1 \leq x \leq 100$ であることは自明なので、その範囲で二分探索してあげれば良い。
 こういう単調増加関数に対しては二分探索は有効
+
 ```C++
 #include <bits/stdc++.h>
 
@@ -1209,10 +1280,13 @@ int main(){
     return 0;
 }
 ```
+
 ### A13 Close Pairs ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_m
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_m>
 
 こういったソートされている配列から2点を選び、条件に合う2点の取り方の組み合わせを求める問題は**しゃくとり法**を使う事で効率的に解くことができる。
+
 ```C++
 #include <bits/stdc++.h>
 
@@ -1245,9 +1319,10 @@ int main(){
 }
 ```
 
-
 # 4章 動的計画
+
 ## 4.0 動的計画法とは
+
 **動的計画法**とはより小さい問題の結果を利用して問題を解く方法の総称であり、よくDP(Dynamic Programming)と略して呼ばれる事が多い<br>
 
 例えば以下のような問題があるとする
@@ -1257,6 +1332,7 @@ int main(){
 ![](images/4_DP.png)
 
 この問題を解く最もシンプルな方法は、移動経路全てを全探索する事で今回は部屋の数が5つと少ないので、取りうる経路は以下の5通りしかなく、簡単に求める事ができる<br>
+
 - 1⇒2⇒3⇒4⇒5
 - 1⇒2⇒4⇒5
 - 1⇒2⇒3⇒5
@@ -1267,6 +1343,7 @@ int main(){
 効率の良い探索方法とは言えない<br>
 
 そこで、いきなり部屋1から5までの最短経路を出すのではなく、以下のような順序で問題を考えてみる事にする
+
 - 部屋1から部屋1までの最短時間dp[1]
 - 部屋1から部屋2までの最短時間dp[2]
 - 部屋1から部屋3までの最短時間dp[3]
@@ -1274,6 +1351,7 @@ int main(){
 - 部屋1から部屋5までの最短時間dp[5]
 
 すると以下のような流れで解くことかできる
+
 1. スタート地点が部屋1なのでdp[1]=0
 2. 部屋2に進む経路は1からしかないので、dp[2]=2
 3. 1からの経路と2から経路があり、以下の流れでdp[3]=5
@@ -1289,10 +1367,13 @@ int main(){
 このように、dp[1]やdp[2]のように小さい問題の結果を解きその結果を後の計算に利用して順に解いていく手法を**動的計画法**という
 
 ## 4.1 動的計画法の基本
+
 ### A16 Dungeon1 ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_p
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_p>
 
 dp[1]=0、dp[2]=A[2]とした上で、dp[3]以降を以下の式で順に計算してあげれば解くことが可能<br>
+
 ```
 dp[i] = min(dp[i - 1] + A[i], dp[i - 2] + B[i])
 ```
@@ -1330,9 +1411,11 @@ int main(){
 ```
 
 ### B16 Frog 1
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/dp_a
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/dp_a>
 
 A16の問題とほぼ同じ。コストの部分を直せばそのまま解ける
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -1362,10 +1445,13 @@ int main(){
 ```
 
 ## 4.2 動的計画法の復元
+
 ### A17 Dungeon2 ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_q
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_q>
 
 最短経路を求める場合は、DPを求めた後に後ろから順に計算結果が合う経路を辿って行ってあげることで少ない計算量で求める事が可能
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -1419,7 +1505,8 @@ int main(){
 ```
 
 ### B17 Frog 1 with Restoration
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cp
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cp>
 
 B16の問題をA17と同じ方法で最短経路を探索するだけ
 
@@ -1471,13 +1558,16 @@ int main(){
 ```
 
 ## 4.3 二次元のDP(1):部分和問題
+
 ### A18 Subset Sum ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_r
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_r>
 
 数字のかかれたN枚のカードを用いて合計Sになるようなカードの選択方法があるかを判定する問題
 一番シンプルにやるのであればbit全探索ですべての通りを試すのだが、これだとO(2^N)となり、非常に計算量が膨大
 
 そこで以下のように考える
+
 1. カードが1枚の時は、そのカードを取るか取らないかの二択なので、０とカードに書かれている数字A1にチェック
 2. カードが2枚の時、1枚の時の数字はそのまま引き継ぎ、その数字をベースに数字A2を足したところにチェック
 3. カードが3枚の時、2枚の時の数字はそのまま引き継ぎ、その数字をベースに数字A3を足したところにチェック
@@ -1531,11 +1621,13 @@ int main(){
 ```
 
 ### B18 Subset Sum with Restoration
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cq
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cq>
 
 基本的にはA17のようにdpでSとなる組合わせがあるかどうかを確認した後、その結果から順に取得するべきかを選択していく事で求めることができる<br>
 
 具体的には、以下のような感じ
+
 1. 現在の最大値Sに対して、以下の条件を満たすiを探す
    1. dp[i][S]が負
    2. dp[i][S - A[i+1]]が正
@@ -1545,7 +1637,6 @@ int main(){
 
 dp[i][S]が負かつ、dp[i][S - A[i+1]]の時、A[i+1]がSにするために必要な要素であることが分かる<br>
 その後は現在の最大値SをS - A[i+1]に更新して、同様に繰り返す事で最終的にSにするために必要なカードの番号の組み合わせを算出することが可能となる
-
 
 ```C++
 #include <bits/stdc++.h>
@@ -1606,14 +1697,17 @@ int main(){
 ```
 
 ## 4.4 二次元のDP(2):ナップザック問題
+
 ### A19 Knapsack1 ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_s
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_s>
 
 いわゆる**ナップザック問題**とよばれるDPの代表的問題<br>
 N個の物があり、それぞれの荷物の重さはwiで価値viが付けられている。ナップザックに入る重さは最大でWの時、
 その中で価値が最大になるように物を選び、その価値の最大値を求めるというもの<br>
 
 基本的な考え方はA18の応用で、チェックを付けていたのを数字に置き換えてあげれば良い
+
 1. dp[0][0]に0を付けて、その他は×をつける(プログラム的には物の価値の最大値より大きい負の数字を入れると楽)
 2. ```1 <= i```以降は```0 <= j <= w```の範囲で
    1. ```j < wi```の時は、荷物が入らないのでそのまま以前の結果を引き継ぐ
@@ -1624,6 +1718,7 @@ N個の物があり、それぞれの荷物の重さはwiで価値viが付けら
 
 ![](images/4_napsack1.png)
 ![](images/4_napsack2.png)
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -1664,12 +1759,13 @@ int main(){
 ```
 
 ### B19 knapsack2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr>
 
 A19と違い、今度はWの数が膨大になっている。<br>
-この場合にA19と同様のDP配列を作ると、```N * 10^9```個の配列について考えなければいけないので、探索量が多くなってしまう。<br>
+この場合にA19と同様のDP配列を作ると、```N *10^9```個の配列について考えなければいけないので、探索量が多くなってしまう。<br>
 このような場合は、逆転して価値viについての最小となるWiの組み合わせを見つけあげることで解決が短時間で処理<br>
-今回はWの最大値が```10^9```であるのに対して、価値の最大値は```1000 * N <= 10^5```であるため、Wに対するdp表を作るよりも短い探索回数で最適解を求める事ができる、
+今回はWの最大値が```10^9```であるのに対して、価値の最大値は```1000* N <= 10^5```であるため、Wに対するdp表を作るよりも短い探索回数で最適解を求める事ができる、
 
 ```C++
 #include <bits/stdc++.h>
@@ -1714,21 +1810,26 @@ int main(){
 ```
 
 ## 4.5 二次元のDP(3):最長共通部分列問題
+
 ### A20 LSC ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr>
 
 配列の最長共通部分列を求める問題でもDPが使える。<br>
 
 ※ そもそも最長共通部分列とは?<br>
 ある文字列から**順番を変えずに**一部の文字を取り出した物を**部分列**と呼ぶ<br>
+
 ```
 例) mynavi ⇒　mnv,mna,yna,avi,mai...など
     monday ⇒  mny,mna,ond,day...など
 ```
+
 最長共通部分列とは二つの文字列から部分列を生成した時、それが同じになるものを**共通部分列**と呼ぶ。上の例だと```mna```がそれにあたる<br>
 その中で最も長い部分列を見つける問題である。<br>
 
 この問題を解くには2段階の理解が必要<br>
+
 - Step1 二つの文字列からなるマス目を考える<br>
 文字列とマス目は全く関係内容に思えるが、以下のようなマス目を考えると一気に分かりやすくなる。<br>
 ![](images/4_LCS1.png)<br>
@@ -1740,9 +1841,11 @@ int main(){
 - STEP2 動的計画法を考える
 赤い矢印を一番多く通る経路が最長になることは分かったので、次にどうやって一番多く通る経路を調べる事ができるかを考える。<br>
 今回のDPは以下のように考える事ができる<br>
+
 ```
 dp[i][j] ： マス(i,j)に到達するまでに通る、赤い矢印の本数の最大値
 ```
+
 マス(i,j)に遷移するための移動方法は主に以下の3つ
 |移動方法|通る赤い矢印の本数|
 |---|---|
@@ -1782,11 +1885,13 @@ int main(){
 ```
 
 ### B20 Edit Distance
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cs
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cs>
 
 これは[編集距離(レーベンシュタイン距離)](https://mathwords.net/hensyukyori)を算出する問題。<br>
 編集距離というのは二つの文字列がどれだけ似ているのかを示す距離で、0に近い程、二つの文字が似ている事を示している。<br>
 具体的には以下の3つの操作のいずれかを実行して、片方の文字を編集していき、最低何回の編集回数で文字列を一致させる事ができるかを考える。<br>
+
 - 一文字挿入
 - 一文字削除
 - 一文字置換
@@ -1809,6 +1914,7 @@ A20のLCSと同様にマス目のように考える。
   - 左上のマスの数字 + c (このマスの縦と横の文字が同じ場合c=0 異なる場合c=1)<br>
 
 例えば(1,1)のマス目について考えると、
+
 - マス(0,1) + 1 = 2
 - マス(1,0) + 1 = 2
 - マス(0,0) + 1 = 1<br>
@@ -1855,8 +1961,10 @@ int main(){
 ```
 
 ## 4.6 二次元のDP(4):区間DP
+
 ### A21 Block Game ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_u
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_u>
 
 この問題ではどんな操作をしても、残るブロックは連続した番号になることに注目する(1,2,3と残ることは合っても,1,2,4の様に一つ抜けるような事はない)<br>
 この時のDPの考え方は区間i(1 <= i <= N) ~ j (i <= j <= N)の区間における最大値dp[i][j]を計算する問題として考える<br>
@@ -1871,7 +1979,6 @@ dp[i][j]になるには以下の二つのパターンの操作が考えられる
 
 そうすると最終的に以下のようなイメージでスコアの取りうる最大値を求める事が可能<br>
 ![](images/4_range_DP.png)
-
 
 ```C++
 #include <bits/stdc++.h>
@@ -1913,12 +2020,14 @@ int main(){
 ```
 
 ### B21 Longest Subpalindrome
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ct
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ct>
 
 今回は文字列Sからいくつかの文字を削って作れる最長の回文文字列を求める問題<br>
 削る操作だけなので、区間S[l][r]の時に作れる最長の回文文字列を解くDP問題としてといて上げればよい<br>
 
 - 手順<br>
+
 1. 区間の長さが1の時はそのまま回文になるので```dp[i][i] = 1```
 2. 区間の長さが2の時は二つの文字が同じであれば回文なので```dp[i][i+1]=2```、違うなら削って1になるので```dp[i][i+1] = 1```
 3. 区間の長さが3以上の時、以下の遷移パターンを考える
@@ -1926,7 +2035,6 @@ int main(){
    - S[l]を削る場合は、```S[l + 1] ~ S[r]```から作れる最長文字長と同じになる
    - S[r]を削る場合は、```S[l] ~ S[r - 1]```から作れる最長文字列と同じになる<br>
 4. 3の操作を区間の長さ3,4,5~と繰り返す事で区間0~Nの文字列から作れる回文の最長文字列長が求まる
-
 
 ```C++
 #include <bits/stdc++.h>
@@ -1979,17 +2087,22 @@ int main(){
 ```
 
 # 5章 数学的問題
+
 ## 5.0 数学的問題について
+
  $2^8$ の計算を高速に行うにはどうしたらよいか<br>
 単純に解く場合、2×2×2×2×2×2×2×2を順に計算すれば解くこと自体はできるが、7回の掛け算が必要になる<br>
 しかし,  $2^8=4^4=16^2$ であることを利用すると、計算結果を流用することで2×2=4、4×4=16、16×16=256の3回の掛け算で答えを求める事が可能になる<br>
 このように、数学的な見た目の問題にもアルゴリズムが役立つ。そのため競プロではこういった問題がたびたび出題される。この章ではそういった頻出の「数学的なテクニック」を10個の節に分けて説明する
 
 ## 5.1 素数判定
+
 ### A26 Prime Check ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_z
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_z>
 
 素数判定を行う問題。素数を判定する場合、  $\sqrt{X}$ 以上の数は考慮しなくてよいのでそれを用いることでより効率的に計算可能<br>
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -2029,11 +2142,13 @@ int main(){
 }
 ```
 
-### B26 Output Prime Numbers 
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cy
+### B26 Output Prime Numbers
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cy>
 
 N以下の素数を全て求める問題。この問題は**エラストテネスのふるい**というアルゴリズムで効率的に解くことが可能<br>
 手順
+
 1. 2~Nまでの素数かどうかの結果を格納する配列を作成
 2. 初期値i=2として2の倍数を全て消去
 3. 配列を確認して、iの次に大きい消去されていない数をiに代入(この場合3)
@@ -2069,10 +2184,13 @@ int main(){
 ```
 
 ## 5.2 最大公約数
+
 ### A27 Calculate GCD ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_o
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_o>
 
 二つの整数A,Bの最大公約数を求める問題。**ユークリッドの互除法**で解くことが可能。
+
 1. 二つの数の大きい方に対して小さい方で割った余りを計算
 2. 大きい方の数に余りの値を代入して、1を繰り返す
 3. 余りが0になった時にもう片方の数が最大公約数であることが分かる
@@ -2100,7 +2218,8 @@ int main(){
 ```
 
 ### B27 Calculate LCM
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cz
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cz>
 
 今度は最小公倍数( $LCM$ )を求める問題。しかしこちらは最大公約数( $GCD$ )の結果を使う事で簡単に解くことが可能<br>
 二つの整数A,Bの最大公約数 $gcd$ がある時、A,Bはそれぞれ以下のように表せる<br>
@@ -2136,10 +2255,11 @@ int main(){
 }
 ```
 
-
 ## 5.3 余りの計算(1):基本
+
 ### A28 Blackboards ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ab
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ab>
 
 各計算過程での10000で割った時の余りを求める問題<br>
 そのまま馬鹿正直に計算すると途中でオーバーフローを起こしてしまうため、工夫する必要がある<br>
@@ -2190,7 +2310,8 @@ int main(){
 ```
 
 ### B28 Fibonacci Easy (mod 1000000007)
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_ap
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_ap>
 
 基本的にはA28の問題と同様の性質を活用して計算する。<br>
 フィボナッチ数列は二つ前と一つ前の数字を足した数の数列であるが、常に算出した値の余りを計算するようにして、その余り同士を足し合わせる事でオーバーフローを防げる。
@@ -2225,16 +2346,19 @@ int main(){
 ```
 
 ## 5.4 余りの計算(2)：累乗
+
 ### A29 Power ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_aq
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_aq>
 
 そのままシンプルに解くことを考えると、bの数まで順にaをかけていけば良いが、これだと時間切れになる<br>
 そこで,5.0節でやったような考え方で高速に計算することを考える。<br>
 例えば  $a^{13}$ を計算することを考えると、通常13回の掛け算が必要だが、
--  $a^1 \times a^1 = a^2$ を計算
--  $a^2 \times a^2 = a^4$ を計算
--  $a^4 \times a^4 = a^8$ を計算
--  $a^8 \times a^4 \times a^1 = a^13$ を計算<br>
+
+- $a^1 \times a^1 = a^2$ を計算
+- $a^2 \times a^2 = a^4$ を計算
+- $a^4 \times a^4 = a^8$ を計算
+- $a^8 \times a^4 \times a^1 = a^13$ を計算<br>
 というように計5回の掛け算で計算することが可能
 
 またオーバーフローについては前回の掛け算では好きなタイミングで余りをとっても答えは変わらない性質を用いて、適宜計算タイミングでmodを計算しておくことで防ぐ事ができる<br>
@@ -2275,7 +2399,8 @@ int main(){
 ```
 
 ### B29 Power Hard
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_db
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_db>
 
 基本的にはA29と同じだが、bの制約がかなり大きくなっている。A29の時はi=32で計算できる範囲だったが、これを更に拡張する必要がある。while文に変更して途中でbreakできるように実装することで、i=64まで対応可能にした。<br>
 注意点としてはシフト演算子の型に気をつける必要がある。そのまま1としてしまうとint型になってしまうので、31以上の計算ができない。1ULLとしてunsigned long long型として定義してあげる必要があることを忘れないように
@@ -2318,8 +2443,10 @@ int main(){
 ```
 
 ## 5.5 余りの計算(3):割り算
+
 ### A30 Combination ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ad
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ad>
 
 足し算、引き算、掛け算については計算過程のどのタイミングでmodをとっても答えは変わらないが、割り算の場合はそうはいかない。<br>
 割り算の場合は以下の性質があることの把握する必要がある
@@ -2329,12 +2456,14 @@ int main(){
 
 実際にこの性質を使用して問題を解く場合以下のような流れで処理を行う.<br>
 例)  $12 \div 3$ を5で割った余りを求める
+
 1. 分母分子を5で割った余りを求める  $2 \div 3$
-2.  $\div 3$ を  $\times 3^{5-2}$ に変更　 $2 \times 3^{5-2}$
+2. $\div 3$ を  $\times 3^{5-2}$ に変更　 $2 \times 3^{5-2}$
 3. 直接計算 54
 4. 実際に余りをとる 5
 
 直接計算とあるが、「  $\times b^{M - 2}$ 」に変更した後は好きなタイミングで余りを取れるので、  $b^{M - 2}$ の余りを5.4節の累乗の余りの計算方法で先に計算してあげると楽に計算できる
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -2390,7 +2519,8 @@ int main(){
 ```
 
 ### B30 Combination2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_dc
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_dc>
 
 A30とほぼ同じ解法で解ける。ようは定式化ができるかどうかの問題<br>
 (1,1)の座標から(H,W)まで行くのに、H方向への移動がH-1回、W方向への移動をW-1回の計W+H-2回の移動を行う。その中でどの順序で移動しても良いので、総移動回数H+W-2回の移動の中でHまたはW方向へ移動するタイミングの組み合わせを考えて上げれば良い<br>
@@ -2450,8 +2580,10 @@ int main(){
 ```
 
 ## 5.6 包除原理
+
 ### A31 Divisors ★2
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ae
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ae>
 
 ```C++
 ```
@@ -2463,7 +2595,9 @@ int main(){
 # 8章 データ構造とクエリ処理
 
 # 9章 グラフアルゴリズム
+
 ## 9.0 グラフとは
+
 多くの人は棒グラフや折れ線グラフなどの資料作成のツールを想像すると思うが、アルゴリズムの文脈ではモノとモノを結ぶネットワーク構造を**グラフ**という<br>
 グラフは頂点と辺からできており、頂点はモノを表し、辺はつながりを表している<br>
 ![](images/9_%E3%82%B0%E3%83%A9%E3%83%95%E4%BE%8B.png)
@@ -2501,8 +2635,10 @@ int main(){
 |木構造|連結な無向グラフの内、閉路が存在しないもの。どの様な木でも頂点をNとするとき辺の本数がN-1となる|
 
 ## 9.1 グラフの実装方法
+
 ### A61 Adjacent Vertices
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bi<br>
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bi<br>>
 コンピュータ上でグラフを表現する方法には**隣接行列表現**と**隣接リスト表現**の二つがある
 
 - 隣接行列表現  
@@ -2552,8 +2688,10 @@ int main(){
     return 0;
 }
 ```
+
 ### B61 Influencer
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_eh
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_eh>
 生徒を頂点、友人関係を辺として最大の次数の人を出力
 
 ```C++
@@ -2587,12 +2725,13 @@ int main(){
 ```
 
 ## 9.2 深さ優先探索
+
 ### A62 Depth First Search ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_am
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_am>
 
 **深さ優先探索**とは進めるだけ進み、行き詰ったら一歩戻ってそこから別の分岐を進む探索方法である。Depth First Searchと呼ばれDFSと略される.<br>
 実装としては再帰関数で実装することが可能
-
 
 ```C++
 #include <bits/stdc++.h>
@@ -2639,9 +2778,9 @@ int main(){
 }
 ```
 
-
 ### B62 Print a Path
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ei
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ei>
 
 深さ優先探索の目的の頂点までの経路を出力する問題<br>
 頂点まで到達したらそれをさかのぼって記録していくような実装を作ればよい<br>
@@ -2698,8 +2837,10 @@ int main(){
 ```
 
 ## 9.3 幅優先探索
+
 ### A63 Shortest Path 1 ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_an
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/math_and_algorithm_an>
 
 **幅優先探索**は先ほどと違い、スタートに近い順番に探索していくアルゴリズムである。<br>
 たとえば頂点1からの最短経路長を求めたい場合、頂点1に0を書き込みその隣の頂点に1,1の頂点の隣に2...というように書き込んでいく
@@ -2707,7 +2848,9 @@ int main(){
 ![](images/9_%E5%B9%85%E5%84%AA%E5%85%88%E6%8E%A2%E7%B4%A2.png)
 
 #### 実装方法
+
 幅優先探索は**queue(キュー)**を用いた方法が一般的
+
 1. 頂点1からxまでの最短経路超をdist[i]=?で初期化
 2. キューに1を追加して、dist[1]=0にする
 3. キューが空になるまで以下の操作を繰り返す
@@ -2760,9 +2903,11 @@ int main(){
 ```
 
 ## B63 幅優先探索
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/abc007_3
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/abc007_3>
 
 幅優先探索を用いて迷路の最短経路を求める問題<br>
+
 1. スタート地点の座標を0として、キューにその座標を入れる
 2. キューが空になるまで以下の操作
    1. キューの先頭要素posを取得
@@ -2822,12 +2967,15 @@ int main(){
 ```
 
 ## 9.4 ダイクストラ法
+
 ### A64 Shortest Path 2 ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bl
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bl>
 
 重み付き無向グラフに対する最短経路問題を解く方法に**ダイクストラ法**というアルゴリズムを用いる<br>
 
 **手順**<br>
+
 1. 未確定頂点の距離をcur[]={0,∞,∞,∞,∞,∞}で初期化
 2. 未確定頂点のうち、現状一番小さい値である1をdist[1]に入力して確定する
 3. 次に1と隣接する頂点2,4についてそれぞれcurを最小のものに更新(cur[]={0,15,∞,20,∞,∞})
@@ -2907,8 +3055,10 @@ int main(){
     return 0;
 }
 ```
+
 ### B64 Print a Path
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ek<br>
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ek<br>>
 
 最短距離の次は最短経路を求める問題<br>
 DPの問題でやったように先に最短距離を求めた後、さかのぼるようにして経路を取得していく。今回の場合全ての頂点で1からの最短距離が分かっているので、<br>
@@ -2992,8 +3142,10 @@ int main(){
 ```
 
 ## 9.5 木に対する動的計画法
+
 ### A65 Road to Promotion ★4
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bm<br>
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bm<br>>
 
 直属の上司が社長以外1人つく会社を考えた時に、各社員についてそれぞれ何名の部下がいるのかを出力する問題<br>
 この時上司関係は木構造で表すことができるので、地位の低い順に動的計画法で部下の人数を求めて行くことで、DP問題のように解くことが可能
@@ -3041,7 +3193,8 @@ int main(){
 ```
 
 ### B65 Road to Promotion Hard
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_el
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_el>
 
 まず番号の制約がないので、深さ優先探索や幅優先探索で一番末端の社員を見つけてから、階層を計算してあげる必要がある。<br>
 今回は幅優先探索を使用して、社長からの距離を求め、距離の遠い順に処理を行うように優先度付きキューを用いた。<br>
@@ -3112,16 +3265,20 @@ int main(){
 ```
 
 ## 9.6 Union-Find 木
+
 ### Connect Query ★3
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bn
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bn>
 
 **Union-Find**はグループ分けを効率的に管理することができるデータ構造である。具体的には以下の2種類のクエリを高速に処理することが可能
+
 - 統合クエリ：要素uを含むグループと要素vを含むグループを統合する
 - 回答クエリ:要素uと要素vが同じグループにあるかを答える
 
 ![](images/9_Union-FInd.png)
 
 Union-Findは以下の条件を満たすような**根付き木**の構造で扱われる
+
 - 同一のグループに属する頂点の根は同じ
 - 異なるグループに属する頂点の根は異なる
 
@@ -3151,6 +3308,7 @@ int root(int x){
 
 今回の回答でUnion-Findを実装した際には、直接vectorを用いて実装したが、クラスを用いて実装することをオススメする<br>
 (次のB問ではクラスを用いた実装に挑戦しているのでそちらを参照)
+
 ```C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -3232,7 +3390,8 @@ int main(){
 ```
 
 ### B66 Typhoon
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_em
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_em>
 
 N本の駅とM本の路線があり、クエリからは運休の情報の入力か二つの駅が繋がっているのかを問われる問題<br>
 二つの駅が繋がっているかについては、Union-Findの得意とするところだが、あくまでUnion-Findができることは、二つのグループの統合処理であるため、運休になった場合にその路線の繋がりを消すような事は難しい(rootを元に統合を行っているため、実際にどことどこの駅が繋がっているかの情報が保存されていないため、どの辺を消せば良いかが分からない)<br>
@@ -3356,8 +3515,10 @@ int main(){
 ```
 
 ## 9.7 最小全域木問題
+
 ### A67 MST ★5
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bo
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bo>
 
 **全域木**とは、M個の辺の中からいくつか選んで作った全ての頂点が繋がっている木のこと。ただし、同じグラフであっても2通りの以上の全域木が考えられる
 
@@ -3461,7 +3622,8 @@ int main(){
 ```
 
 ### B67 Max MST
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_en
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_en>
 
 A67では**最小**全域木を求めたが、今度は**最大**全域木の長さを求める問題<br>
 A67のコードの中のsortの順序を降順に変えるだけで実装可能
@@ -3552,11 +3714,14 @@ int main(){
 ```
 
 ## 9.8 最大フロー問題
+
 ### A68 Maximum Flow ★6
-問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bp
+
+問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bp>
 
 **最大フロー問題**とは重み付き有向グラフで表されるパパイプラインにおいて、スタートからゴールまで流せる水の総量を最大化する問題<br>
 最大フロー問題は「水の流れ」にとどまらず、実社会の様々な課題に応用することができる。
+
 - 各ネットワークの通信料の上限が与えられた時、2つのコンピュータ間でより多くのデータを通信する方法を求める<br>
 - 各交通手段の1日当たりの輸送能力が与えられた時、東京から大阪まで1日最大何人を輸送できるか(ゴールデンウィークなどの大型連休に重要)
 
