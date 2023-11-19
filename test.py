@@ -25,5 +25,5 @@ plt.plot(samp_3_t,samp_3_y,"k-",label="3Hz")
 
 
 plt.legend(loc=7)
-plt.savefig("sampling.jpg")
+plt.savefig("sampling.png")
 plt.show()
