@@ -1,57 +1,29 @@
-from math import *
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+from scipy import stats
 
-def add(a,b):
-    assert len(a) == len(b)
-    return [x + y for x,y in zip(a,b)]
+f = 2.0
+sec = 1
 
-def subtract(a,b):
-    assert len(a) == len(b)
-    return [x - y for x,y in zip(a,b)]
+t = np.arange(0,sec,1/1000)
+y = np.sin(2 * np.pi * f * t)
 
-def product(a,b):
-    assert len(a) == len(b)
-    return [x * y for x,y in zip(a,b)]
+samp_1_t = t[::50]
+samp_1_y = y[::50]
 
-def div(a,b):
-    assert len(a) == len(b)
-    return [x / y for x,y in zip(a,b)]
+samp_2_t = t[::200]
+samp_2_y = y[::200]
 
-def dot(a,b):
-    assert len(a) == len(b)
-    num = 0
-    for x,y in zip(a,b):
-        num += x * y
-    return num
+samp_3_t = t[::300]
+samp_3_y = y[::300]
 
-def cross(a,b):
-    assert len(a) == len(b)
-    assert len(a) == 3
-    return [a[1] * b[2] - a[2] * b[1],a[2] * b[0] - a[0] * b[2],a[0] * b[1] - a[1] * b[0]]
+plt.plot(t,y,"g-",label="analog")
+plt.plot(samp_1_t,samp_1_y,"r-",label="20Hz")
+plt.plot(samp_2_t,samp_2_y,"b-",label="5Hz")
+plt.plot(samp_3_t,samp_3_y,"k-",label="3Hz")
 
-def L1norm(a):
-    num = 0
-    for x in a:
-        num += abs(x)
-    return num
 
-def L2norm(a):
-    return sqrt(dot(a,a))
-
-def Linfnorm(a):
-    return max(a)
-
-a =[1,2,3]
-b = [4,5,6]
-
-print(add(a,b))
-print(subtract(a,b))
-print(product(a,b))
-print(div(a,b))
-
-print(dot(a,b))
-print(cross(a,b))
-
-print(L1norm(a))
-print(L2norm(a))
-print(Linfnorm(a))
-
+plt.legend(loc=7)
+plt.savefig("sampling.jpg")
+plt.show()

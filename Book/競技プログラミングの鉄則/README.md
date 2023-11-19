@@ -47,6 +47,14 @@
   - [2.5 チャレンジ問題](#25-チャレンジ問題)
     - [A10 Resort Hotel ★4](#a10-resort-hotel-4)
 - [3章 二分探索](#3章-二分探索)
+  - [3.0 二分探索とは](#30-二分探索とは)
+  - [3.1 配列の二分探索](#31-配列の二分探索)
+    - [A11　Binary Search 1　★2](#a11binary-search-12)
+    - [B11 Binary Search 2](#b11-binary-search-2)
+  - [3.2 答えで二分探索](#32-答えで二分探索)
+    - [A12 Printer ★3](#a12-printer-3)
+    - [B12 Equation](#b12-equation)
+    - [A13 Close Pairs ★4](#a13-close-pairs-4)
 - [4章 動的計画](#4章-動的計画)
   - [4.0 動的計画法とは](#40-動的計画法とは)
   - [4.1 動的計画法の基本](#41-動的計画法の基本)
@@ -1019,6 +1027,224 @@ int main(){
 ```
 
 # 3章 二分探索
+## 3.0 二分探索とは
+>1以上64以下の整数を思い浮かべ、あなたはYes/Noで答えられる質問を6回まで行う事が可能。思い浮かべた数字を特定してください
+
+このような問題がある時、素直に解くのであれば、1~64まで順に質問すればいつかはあてられるが、回数制限があるのでそれはできない
+
+そこで、あらゆる候補の中で中央で区切る質問を繰り返すと、確実に6回で解くことが可能
+1. 32以上か?⇒No 1~31
+2. 16以上か?⇒Yes 16~31
+3. 24以上か?⇒Yes 24~31
+4. 28以上か?⇒No 24~27
+5. 26以上か?⇒Yes 26~27
+6. 27以上か?⇒No **26**
+
+こういった中央に区切りながら探索範囲を半分ずつにしていくアルゴリズムを**二分探索法**という、この章ではこの二分探索法の実装について解説していく
+
+## 3.1 配列の二分探索
+### A11　Binary Search 1　★2
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_k
+
+素直に二分探索で解ける
+途中で同じ数を見つけた場合はそこで探索を止めた方が効率的ではある
+```C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int N,X;
+    cin >> N >> X;
+    vector<int> A(N,0);
+    for(int i = 0; i < N; i ++) cin >> A[i];
+
+    int min_idx = 0;
+    int max_idx = N - 1;
+
+    while(max_idx -  min_idx > 1){
+        int idx = min_idx + (max_idx - min_idx) / 2;
+        if(A[idx] <= X){
+            min_idx = idx;
+        }
+        else{
+            max_idx = idx - 1;
+        }
+    }
+
+    int ans = X == A[min_idx] ? min_idx + 1 : max_idx + 1;
+
+    cout << ans << endl;
+
+    return 0;
+}
+
+```
+
+ちなみに今回二分探索を自力で実装しているが、C++には二分探索用のライブラリが既に用意されている。
+```
+lower_bound:任意の整数以下の整数の中で最大の数値のインデックスを返す
+upper_bound:任意の整数以上の大きい整数の中で最小の数値のインデックスを返す
+```
+
+### B11 Binary Search 2
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cj
+
+小さい順に並んでいるとは限らないという文がある。二分探索はソートされた配列にしか使用できないので、先に**sort()**してあげてから、**lower_bound()**で二分探索して、**distance**でインデックスの位置を把握してあげれば解ける
+
+```C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int N,Q;
+    cin >> N;
+    vector<int> A(N,0);
+    for(int i = 0; i < N; i ++) cin >> A[i];
+    sort(A.begin(),A.end());
+
+    cin >> Q;
+
+    for(int i = 0; i < Q; i ++){
+        int X;
+        cin >> X;
+
+        int ans = distance(A.begin(),lower_bound(A.begin(),A.end(),X));
+        cout << ans << endl;
+    }
+
+    return 0;
+}
+```
+
+## 3.2 答えで二分探索
+### A12 Printer ★3
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_l
+
+今回は配列自体に二分探索を行うのではなく、配列から計算できる値で二分探索することになる。つまり、任意のN秒の時に作られるチラシの枚数を数える関数を作成して、$[1,10^9]$秒の範囲で二分探索を行ってあげればよい。
+1. $10^9 \div 2$秒の時のチラシの枚数を数える
+2. 大小を判定、範囲を更新
+3. 更新した範囲の中央の値でチラシの枚数を数える
+4. 2~3を範囲が一意に定まるまで、繰り返す
+
+```C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+unsigned long long count_nums(vector<unsigned long long>& A,unsigned long long sec){
+    unsigned long long  count = 0;
+
+    for(int i = 0; i < A.size(); i ++){
+        count += sec / A[i];
+    }
+
+    return count;
+}
+
+int main(){
+    unsigned long long N,K;
+    cin >> N >> K;
+    vector<unsigned long long> A(N,0);
+    for(int i = 0; i < N; i ++) cin >> A[i];
+    sort(A.begin(),A.end());
+
+    unsigned long long  min_sec = 0;
+    unsigned long long  max_sec = 1e9;
+    unsigned long long  ans;
+    while(max_sec - min_sec > 1){
+        unsigned long long  sec = min_sec + (max_sec - min_sec) / 2;
+        unsigned long long  nums = count_nums(A,sec);
+
+        if(nums < K ) min_sec = sec + 1;
+        else max_sec = sec;
+    }
+
+    ans = count_nums(A,min_sec) < K ? max_sec : min_sec;
+    cout << ans << endl;  
+
+    return 0;
+}
+```
+
+### B12 Equation
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_ck
+
+今回は範囲が浮動小数点型であることに注意。
+式より$1 \leq x \leq 100$であることは自明なので、その範囲で二分探索してあげれば良い。
+こういう単調増加関数に対しては二分探索は有効
+```C++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+double calc_equation(double x){
+    return pow(x,3) + x;
+}
+
+int main(){
+    unsigned long long N,K;
+    cin >> N;
+
+    double min_idx = 1;
+    double max_idx = 1e2;
+
+    while(true){
+        double idx = min_idx + (max_idx - min_idx) / 2;
+        double ans = calc_equation(idx);
+        if(abs(ans - N) < 1e-3){
+            cout << idx << endl;
+            return 0;
+        }
+
+        if(ans < N){
+            min_idx = idx;
+        }
+        else{
+            max_idx = idx;
+        }
+    }
+
+    return 0;
+}
+```
+### A13 Close Pairs ★4
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_m
+
+こういったソートされている配列から2点を選び、条件に合う2点の取り方の組み合わせを求める問題は**しゃくとり法**を使う事で効率的に解くことができる。
+```C++
+#include <bits/stdc++.h>
+
+using namespace std;
+int main(){
+    unsigned long long N,K;
+    cin >> N >> K;
+
+    vector<unsigned long long> A(N + 1,0);
+    vector<unsigned long long> R(N + 1,0);
+
+    for(int i = 0; i < N; i ++) cin >> A[i];
+
+    for(int i = 0; i < N - 1; i ++){
+        //初期位置の確認
+        if(i == 0) R[i] = 0;
+        else R[i] = R[i-1];
+
+        //現在の位置を基準に限界まで伸ばす
+        while(R[i] < N - 1 && A[R[i] + 1] - A[i] <= K){
+            R[i] ++;
+        }
+    }
+
+    long long ans = 0;
+
+    for(int i = 0; i < N - 1; i ++) ans += R[i] - i;
+    cout << ans << endl;
+    return 0;
+}
+```
+
 
 # 4章 動的計画
 ## 4.0 動的計画法とは
