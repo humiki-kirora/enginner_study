@@ -8,7 +8,7 @@
   - [基礎知識](#基礎知識)
     - [行列の基本的な算術](#行列の基本的な算術)
     - [正方行列](#正方行列)
-    - [単位行列$E$(identity matrix)](#単位行列eidentity-matrix)
+    - [単位行列 $E$ (identity matrix)](#単位行列-e-identity-matrix)
     - [逆行列](#逆行列)
     - [転置行列](#転置行列)
   - [掃き出し法(ガウスの消去法)](#掃き出し法ガウスの消去法)
@@ -132,7 +132,7 @@ $$A = \begin{bmatrix}
     3 & 4 & 1
 \end{bmatrix}$$
 
-### 単位行列$E$(identity matrix)
+### 単位行列 $E$ (identity matrix)
 
 正方行列の内、対角成分が1でそれ以外が0の行列
 **恒等行列**などとも呼ばれている。
@@ -154,7 +154,10 @@ $EA = AE = A$
 ある正方行列 $A$ があったとして、$A^{-1}A=E$ を満たす行列 $A^{-1}$ を**逆行列**と呼ぶ
 2×2の逆行列の求め方は以下の通り
 
-$$A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$$
+$$A = \begin{bmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22}
+\end{bmatrix}$$
 
 $$A^{-1} = \frac{1}{det(A)}\begin{bmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11} \end{bmatrix}$$
 
@@ -164,7 +167,14 @@ $n×n$以上の大きさの行列の逆行列を求める際は[掃き出し法]
 
 ある $m×n$ の行列 $A$ がある時、行と列の要素を入れ替えて $n×m$ の行列に変換した行列 $A^\top$ を**転置行列**と呼ぶ<br>
 
-$$A =  \begin{bmatrix} 1 & 2 & 3 \\ 4 & 2 & 1 \end{bmatrix} A^\top = \begin{bmatrix} 1 & 4 \\ 2 & 2 \\ 3 & 1 \end{bmatrix}$$
+$$A = \begin{bmatrix}
+  1 & 2 & 3 \\
+  4 & 2 & 1 \end{bmatrix}
+A^\top = \begin{bmatrix}
+  1 & 4 \\
+  2 & 2 \\
+  3 & 1
+\end{bmatrix}$$
 
 ## 掃き出し法(ガウスの消去法)
 
