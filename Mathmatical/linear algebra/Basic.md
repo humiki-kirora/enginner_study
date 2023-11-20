@@ -73,13 +73,17 @@ $$\begin{bmatrix}
 - **スカラー積**<br>
 要素を全てスカラー量倍にする<br>
 
-$$ 4 \times
-    \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} =
-    \begin{bmatrix} 4 & 8 \\ 16 & 12 \end{bmatrix}$$
+$$ 4 \times \begin{bmatrix}
+    1 & 2 \\
+    4 & 3
+\end{bmatrix} =
+\begin{bmatrix}
+  4 & 8 \\
+  16 & 12
+\end{bmatrix}$$
 
 - **行列積**<br>
-左の行列$A$が$m×n$,右側の行列$B$が$n×k$の行列とした時,$A$の$i$行目から順に$B$の$j$列との内積を計算するして、結果を$i$行$j$列目に格納する<br>
-例) <br>
+左の行列 $A$ が $m×n$ ,右側の行列 $B$ が $n×k$ の行列とした時, $A$ の $i$ 行目から順に $B$ の $j$ 列との内積を計算するして、結果を $i$ 行 $j$ 列目に格納する<br>
 
 $$A =  \begin{bmatrix}
  1 & 2 & 3 \\
@@ -93,8 +97,8 @@ $$B =  \begin{bmatrix}
 \end{bmatrix}$$
 
 $$AB = \begin{bmatrix}
-   1 *1 + 2*2 + 3*5 & 1* 2 + 2 *1 + 3* 6 \\
-  4*1 + 2* 2 + 1 *5 & 4* 2 + 2 *1 + 1* 6  
+   1 * 1 + 2 * 2 + 3 * 5 & 1 * 2 + 2 * 1 + 3 * 6 \\
+   4 * 1 + 2 * 2 + 1 * 5 & 4 * 2 + 2 * 1 + 1 * 6  
 \end{bmatrix} = \begin{bmatrix}
  20 & 22 \\
  13 & 16
