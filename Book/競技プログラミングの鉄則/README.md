@@ -56,6 +56,10 @@
     - [A12 Printer ★3](#a12-printer-3)
     - [B12 Equation](#b12-equation)
     - [A13 Close Pairs ★4](#a13-close-pairs-4)
+    - [B13 Supermarket2](#b13-supermarket2)
+  - [3.4 半分全列挙](#34-半分全列挙)
+    - [A14 Four Boxes ★5](#a14-four-boxes-5)
+    - [B14 Another Subset Sum](#b14-another-subset-sum)
 - [4章 動的計画](#4章-動的計画)
   - [4.0 動的計画法とは](#40-動的計画法とは)
   - [4.1 動的計画法の基本](#41-動的計画法の基本)
@@ -1319,6 +1323,168 @@ int main(){
 }
 ```
 
+### B13 Supermarket2
+
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cl
+
+この問題もしゃくとり法で解くことができるが、工夫が必要
+今回は特にソートもされていないため、単調増加ではなく、また2点の間の数の総和を求めなければいけないので、そのままA13のようなしゃくとり法は適用できない。
+そこで範囲内のある区間の総和といえば、 **累積和** が活用できることを思い出して欲しい。Aについての先に累積和を取ることで、単調増加かつ、2点の要素で範囲内の総和を計算できる形に変形できるため、累積和の配列に対して、しゃくとり法を適用すれば効率的に解ける
+```C++
+#include <bits/stdc++.h>
+
+ulong N,K;
+using namespace std;
+int main(){
+    cin >> N >> K;
+    vector<ulong> A(N,0);
+    vector<ulong> cumsum(N + 2,0);
+    vector<ulong> R(N + 1,0); 
+    for(int i = 0; i < N; i ++) cin >> A[i];
+
+    cumsum[1] = A[0];
+    for(int i = 1; i < N; i ++){
+        cumsum[i + 1] = A[i] + cumsum[i];
+    }
+
+    for(int i = 0; i < N; i ++){
+        if(i==0) R[i] = 0;
+        else R[i] = R[i-1];
+
+        while(R[i] < N && cumsum[R[i] + 1] - cumsum[i] <= K){
+            R[i] ++;
+        }
+    }
+
+    ulong ans = 0;
+    for(int i = 0; i < N; i ++) ans += R[i] - i;
+    cout << ans << endl;
+    return 0;
+}
+```
+
+## 3.4 半分全列挙
+### A14 Four Boxes ★5
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_n
+
+4つの要素からそれぞれ1枚を選択して、その和が特定の値になるかを調べれば良いが、全通りを試すのは $O(N^4)$ になるため、これでは時間に間に合わない
+そこで **半分全列挙** というテクニックを使用する。
+
+step1:要素をAB、CDの二つに分けて、それぞれで全通りの和を計算しておく<br>
+step2:ABの各要素で $K - AB[i]$ を計算して、その値と一致するものをCDの配列を二分探索する<br>
+
+step1ではそれぞれの計算で $O(N^2)$ <br>
+step2では二分探索を $N^2$ 回行うので $O(N^2 logN)$ <br>
+
+つまりアルゴリズム全体では $O(N^2 logN)$ となり、 通常の全探索よりも効率良く計算することが可能
+
+```C++
+#include <bits/stdc++.h>
+
+ulong N,K;
+using namespace std;
+int main(){
+    cin >> N >> K;
+
+    vector<ulong> A(N,0);
+    vector<ulong> B(N,0);
+    vector<ulong> C(N,0);
+    vector<ulong> D(N,0);
+
+    for(int i = 0; i < N; i ++) cin >> A[i];
+    for(int i = 0; i < N; i ++) cin >> B[i];
+    for(int i = 0; i < N; i ++) cin >> C[i];
+    for(int i = 0; i < N; i ++) cin >> D[i];
+
+    // step1:calc AB sum & CD sum
+    vector<ulong> ABsum(N * N,0);
+    vector<ulong> CDsum(N * N,0);
+
+    int count  = 0;
+    for(int i = 0; i < N; i ++){
+        for(int j = 0; j < N; j ++){
+            ABsum[count] = A[i] + B[j];
+            CDsum[count] = C[i] + D[j];
+            count ++;
+        }
+    }
+
+    sort(CDsum.begin(),CDsum.end());
+
+    // step2 片方の要素を引いた値を2分探索
+    for(int i = 0; i < N * N; i ++){
+        ulong ans = K - ABsum[i];
+        if(binary_search(CDsum.begin(),CDsum.end(),ans)){
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+    cout << "No" << endl;
+    return 0;
+}
+```
+
+### B14 Another Subset Sum
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cm
+
+一つの配列に対しても、前後に分けて半分全列挙を使う事で計算量を短縮することが可能
+この場合はそのまま行うと, $O(2^N)$ になってしまうところを $O(2^{\frac{N}{2}})$ に落とす事ができ、N=30と大きい要素数に対しても時間内に計算が可能
+
+```C++
+#include <bits/stdc++.h>
+
+ulong N,K;
+using namespace std;
+int main(){
+    cin >> N >> K;
+
+    vector<ulong> A(N,0);
+    for(ulong i = 0; i < N; i ++) cin >> A[i];
+
+
+    // step1:calc Afront sum & Aback sum
+    ulong element_size = N / 2;
+    vector<ulong> AFsum(1 << element_size,0);
+    ulong pattern = (1 << element_size);
+
+    for(ulong i = 0; i < pattern; i ++){
+        ulong ans = 0;
+
+        for(ulong j = 0; j < element_size; j ++){
+            ulong div = (i / (1 << j));
+            if(div % 2 == 1) ans += A[j];
+        }
+        AFsum[i] = ans;
+    }
+
+    vector<ulong> ABsum(1 << (N - element_size),0);
+    pattern = (1 << (N - element_size));
+
+    for(ulong i = 0; i < pattern; i ++){
+        ulong ans = 0;
+
+        for(ulong j = element_size; j < N; j ++){
+            ulong div = ((i << element_size) / (1 << j));
+            if(div % 2 == 1) ans += A[j];
+        }
+        ABsum[i] = ans;
+    }
+
+    sort(ABsum.begin(),ABsum.end());
+
+    // step2 片方の要素を引いた値を2分探索
+    for(ulong i = 0; i < (1 << element_size); i ++){
+        ulong ans = K - AFsum[i];
+        if(binary_search(ABsum.begin(),ABsum.end(),ans)){
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+    cout << "No" << endl;
+    return 0;
+}
+```
+
 # 4章 動的計画
 
 ## 4.0 動的計画法とは
@@ -1844,7 +2010,7 @@ int main(){
 
 ```
 dp[i][j] ： マス(i,j)に到達するまでに通る、赤い矢印の本数の最大値
-```
+```v
 
 マス(i,j)に遷移するための移動方法は主に以下の3つ
 |移動方法|通る赤い矢印の本数|
