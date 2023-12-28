@@ -3321,7 +3321,7 @@ int main(){
 
 ### A65 Road to Promotion ★4
 
-問題文:<https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bm<br>>
+問題文:https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_bm<br>
 
 直属の上司が社長以外1人つく会社を考えた時に、各社員についてそれぞれ何名の部下がいるのかを出力する問題<br>
 この時上司関係は木構造で表すことができるので、地位の低い順に動的計画法で部下の人数を求めて行くことで、DP問題のように解くことが可能
